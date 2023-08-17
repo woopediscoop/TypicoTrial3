@@ -1,0 +1,639 @@
+{
+  "Material": {
+    "NETZGEWEBE": {
+      "NETZPLANE ECO": {
+        "Materialbreite max.": "505 cm",
+        "Gewicht": "180 g/qm",
+        "St\u00e4rke": "300 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "\u00d6ffnungsanteil 15 %"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "N\u00e4hen"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei",
+          "umweltfreundlich",
+          "Ressourcen-schonend",
+          "Ressourcen-effiziente CO2 Reduzierung"
+        ],
+        "Faltbar": ""
+      },
+      "NETZPLANE FIFA": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "380 g/qm",
+        "St\u00e4rke": "440 \u00b5",
+        "flammhemmend": "DIN 4102-B1",
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "\u00d6ffnungsanteil 8 %"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringe Transportkosten"
+        ]
+      },
+      "NETZPLANE MESH AIR": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "235 g/qm",
+        "St\u00e4rke": "450 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "\u00d6ffnungsanteil 35 %"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringe Transportkosten"
+        ]
+      },
+      "NETZPLANE PES MESH": {
+        "Materialbreite max.": "505 cm",
+        "Gewicht": "235 g/qm",
+        "St\u00e4rke": "540 \u03bc",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+
+
+        
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei",
+          "umweltfreundlich",
+          "aus recyclebarem Material",
+          "Nachhaltigkeit"
+        ],
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringere Transportkosten"
+        ]
+      },
+      "NETZPLANE UEFA": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "340 g/qm",
+        "St\u00e4rke": "410 \u00b5",
+        "flammhemmend": "DIN 4102-B1",
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "\u00d6ffnungsanteil 15 %"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringe Transportkosten"
+        ]
+      }
+    },
+    "PLANEN": {
+      "ECO FRONTLIT": {
+        "Materialbreite max.": "505 cm",
+        "Gewicht": "270 g/qm",
+        "St\u00e4rke": "360 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "Au\u00dfenwerbung"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "N\u00e4hen"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei",
+          "umweltfreundlich",
+          "Ressourcen-schonend",
+          "nachhaltig"
+        ],
+        "Faltbar": ""
+      },
+      "LEICHTPLANE": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "450 g/qm",
+        "St\u00e4rke": "390 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "Au\u00dfenwerbung"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": ""
+      },
+      "OPAKPLANE": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "760 g/qm",
+        "St\u00e4rke": "550 \u00b5",
+        "flammhemmend": "DIN 4102-B1",
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "eingearbeitete Sperrschicht",
+          "beidseitig bedruckbar",
+          "absolut licht- und blickdicht"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": ""
+      }
+    },
+    "FRONTLIT GEWEBE": {
+      "A2 GLASFASER": {
+        "Materialbreite max.": "320 cm",
+        "Gewicht": "270 g/qm",
+        "St\u00e4rke": "240 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "A2-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "nicht brennbar"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": ""
+      },
+      "BERTEX NEU GRAUER R\u00dcCKEN": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "330 g/qm",
+        "St\u00e4rke": "330 \u00b5",
+        "flammhemmend": "DIN EN 13501-1",
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "projektionsf\u00e4hig",
+          "grauer R\u00fccken",
+          "blickdicht"
+        ],
+        "Konfektion": [
+          "Schwei\u00dfen",
+          "Textilkeder",
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": ""
+      },
+      "DECO 1": {
+        "Materialbreite max.": "320 cm",
+        "Gewicht": "225 g/qm",
+        "St\u00e4rke": "370 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "TD",
+        "Einsatz": [
+          "Indoor",
+          "Deco Rahmen",
+          "hohe Farbbrillanz",
+          "geruchsneutral",
+          "Optimierung der Raumakustik"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "umweltfreundlich",
+          "leicht und dichter als der 200g Banner",
+          "100% aus recyceltem Polyester"
+        ],
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringe Transportkosten"
+        ]
+      },
+      "V3D TEX": {
+        "Materialbreite max.": "310 cm",
+        "Gewicht": "70 g/qm",
+        "St\u00e4rke": "230 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "TD",
+        "Einsatz": [
+          "Indoor",
+          "transparent",
+          "ca. 70 % Durchdruck"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": ""
+      }
+    },
+    "BLOCKOUT GEWEBE": {
+      "BLOCKOUT SOFT": {
+        "Materialbreite max.": "505 cm",
+        "Gewicht": "270 g/qm",
+        "St\u00e4rke": "270 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "projektionsf\u00e4hig",
+          "schwarzer R\u00fccken",
+          "blickdicht"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei",
+          "recyclebar"
+        ],
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringe Transportkosten"
+        ]
+      },
+      "HYBRID SOFT": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "340 g/qm",
+        "St\u00e4rke": "300 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "projektionsf\u00e4hig",
+          "beidseitig bedruckbar",
+          "eingearbeitete Sperrschicht",
+          "blickdicht"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei"
+        ],
+        "Faltbar": ""
+      },
+      "PES BLOCKOUT": {
+        "Materialbreite max.": "320 cm",
+        "Gewicht": "250 g/qm",
+        "St\u00e4rke": "320 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "TD",
+        "Einsatz": [
+          "Indoor",
+          "eingearbeitete Sperrschicht",
+          "schwarzer R\u00fccken",
+          "lichtdicht",
+          "geruchsneutral"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": "",
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringe Transportkosten"
+        ]
+      },
+      "WHITEBACK": {
+        "Materialbreite max.": "505 cm",
+        "Gewicht": "365 g/qm",
+        "St\u00e4rke": "470 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "projektionsf\u00e4hig",
+          "beidseitig bedruckbar",
+          "wei\u00dfer R\u00fccken",
+          "absolut lichtdicht"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei"
+        ],
+        "Faltbar": ""
+      }
+    },
+    "BACKLIT GEWEBE": {
+      "DYNAJET 110": {
+        "Materialbreite max.": "510 cm",
+        "Gewicht": "135 g/qm",
+        "St\u00e4rke": "130 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "projektionsf\u00e4hig",
+          "hinterleuchtbar"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei",
+          "umweltfreundlich",
+          "schwermetallfrei"
+        ],
+        "Faltbar": ""
+      },
+      "FLEX LIGHT": {
+        "Materialbreite max.": "500 cm",
+        "Gewicht": "180 g/qm",
+        "St\u00e4rke": "200 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "Outdoor",
+          "projektionsf\u00e4hig",
+          "hinterleuchtbar",
+          "knickunempfindlich"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei"
+        ],
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "knitterfrei"
+        ]
+      },
+      "LUX IMAGE": {
+        "Materialbreite max.": "320 cm",
+        "Gewicht": "190 g/qm",
+        "St\u00e4rke": "260 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "TD",
+        "Einsatz": [
+          "Indoor",
+          "hohe Farbbrillianz",
+          "hinterleuchtbar",
+          "geruchsneutral",
+          "Optimierung der Raumakustik"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "umweltfreundlich",
+          "ressourcenschonend"
+        ],
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "knitterfrei"
+        ]
+      },
+      "SAMBA": {
+        "Materialbreite max.": "505 cm",
+        "Gewicht": "205 g/qm",
+        "St\u00e4rke": "230 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "projektionsf\u00e4hig",
+          "hinterleuchtbar"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei",
+          "umweltfreundlich",
+          "schwermetallfrei"
+        ],
+        "Faltbar": ""
+      },
+      "SOFT IMAGE": {
+        "Materialbreite max.": "505 cm",
+        "Gewicht": "205 g/qm",
+        "St\u00e4rke": "360 \u00b5",
+        "flammhemmend": [
+          "DIN EN 13501-1",
+          "B-s1. d0"
+        ],
+        "Druckverfahren": "UV",
+        "Einsatz": [
+          "Indoor",
+          "projektionsf\u00e4hig",
+          "hinterleuchtbar"
+        ],
+        "Konfektion": [
+          "\u00d6sen",
+          "Verst\u00e4rken",
+          "Kederschlaufe",
+          "Hohlsaum",
+          "Klett",
+          "N\u00e4hen",
+          "Gummilippe"
+        ],
+        "Gr\u00fcne Eigenschaften": [
+          "PVC-frei",
+          "umweltfreundlich"
+        ],
+        "Faltbar": [
+          "Zusammenfaltbar",
+          "geringe Transportkosten"
+        ]
+      }
+    }
+    
+  }
+}
