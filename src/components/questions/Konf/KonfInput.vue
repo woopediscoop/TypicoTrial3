@@ -1,5 +1,5 @@
 <template>
-    <component :is="currentKonf" @continue="Continue" @final="EmitKonf"></component>
+    <component :is="currentKonf" @cont="Continue" @final="EmitKonf"></component>
 </template>
 
 <script>
@@ -9,7 +9,7 @@
 
 export default {
 
-    
+    props: ['lastPage'],
     data(){
         return{
         trial: "",
@@ -28,17 +28,20 @@ export default {
         frameSale: () => import('./orderFrame.vue'),
         allRoundFrame: () => import('./AllRoundFrame.vue'),
         contactForm: () => import('../../pages/ContactForm.vue'),
-        //frameExists noFrame frameSale
         firstQuestion() {
             this.frameCondition().then(module => {
                 this.currentKonf = module.default;
             })
         },
-        Continue(templateStr){
+        Continue(data){
+
+            const templateStr = data.frameStatus;
+            this.$emit('continue', data.lastPage)
             if(templateStr == "frameExists"){
                 this.frameExists().then(module => {
                     this.currentKonf = module.default;
                 })
+                
             } else if (templateStr == "noFrame"){
                 this.noFrame().then(module => {
                     this.currentKonf = module.default;
@@ -48,6 +51,7 @@ export default {
                     this.currentKonf = module.default;
                 })
             } else if (templateStr == "allRoundFrame"){
+                
                 this.allRoundFrame().then(module => {
                     this.currentKonf = module.default;
                 })
@@ -56,6 +60,7 @@ export default {
                     this.currentKonf = module.default;
                 })
             }
+
         },
         EmitKonf(konfData) {
             this.trial = konfData;
@@ -64,7 +69,14 @@ export default {
 
     },
     created(){
-        this.firstQuestion()
+        if(this.lastPage == "frameExists"){
+            this.frameExists().then(module => {
+                    this.currentKonf = module.default;
+                })
+        }
+        else{
+            this.firstQuestion()
+        }
     }
 }
 </script>

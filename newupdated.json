@@ -33,6 +33,8 @@
         "Faltbar": ""
       },
       "NETZPLANE FIFA": {
+        "Rating" : 4,
+        "BaseText" : "wird hauptsächlich im Aussenbereich für kleine bis mittlere Formate eingesetzt. Diese Netzplane ist enger gewebt und somit wird das abgebildete Bild besser dargestellt.",
         "Materialbreite max.": "500 cm",
         "Gewicht": "380 g/qm",
         "St\u00e4rke": "440 \u00b5",
@@ -123,6 +125,8 @@
         ]
       },
       "NETZPLANE UEFA": {
+        "Rating" : 4,
+        "BaseText" : " wird hauptsächlich im Aussenbereich für Großformatige Bilder verwendet. Diese Netzplane ist offenporiger und somit statisch geeignet für großformatige Bilder.",
         "Materialbreite max.": "500 cm",
         "Gewicht": "340 g/qm",
         "St\u00e4rke": "410 \u00b5",
@@ -235,6 +239,7 @@
     },
     "FRONTLIT GEWEBE": {
       "A2 GLASFASER": {
+        "Rating" : 2,
         "Materialbreite max.": "320 cm",
         "Gewicht": "270 g/qm",
         "St\u00e4rke": "240 \u00b5",
@@ -285,6 +290,7 @@
         "Faltbar": ""
       },
       "DECO 1": {
+        "Rating" : 2,
         "Materialbreite max.": "320 cm",
         "Gewicht": "225 g/qm",
         "St\u00e4rke": "370 \u00b5",
@@ -320,6 +326,7 @@
         ]
       },
       "V3D TEX": {
+        "Rating" : 2,
         "Materialbreite max.": "310 cm",
         "Gewicht": "70 g/qm",
         "St\u00e4rke": "230 \u00b5",
@@ -347,7 +354,9 @@
       }
     },
     "BLOCKOUT GEWEBE": {
-      "BLOCKOUT SOFT": {
+      "BLOCKOUT SOFT":{
+        "Rating" : 5,
+        "BaseText" : "wird hauptsächlich im Messe- Ausstellungs- und Präsentationsbereich eingesetzt, kann mit ein wenig Witterungsschutz auch im Außenbereich angewendet werden. Es hat eine Stoffoptik und ist blickdicht.",
         "Materialbreite max.": "505 cm",
         "Gewicht": "270 g/qm",
         "St\u00e4rke": "270 \u00b5",
@@ -358,7 +367,7 @@
         "Druckverfahren": "UV",
         "Einsatz": [
           "Indoor",
-          "Outdoor",
+          "Weathered",
           "projektionsf\u00e4hig",
           "schwarzer R\u00fccken",
           "blickdicht"
@@ -475,6 +484,8 @@
     },
     "BACKLIT GEWEBE": {
       "DYNAJET 110": {
+        "Rating" : 5,
+        "BaseText" : "wird für Leuchtkästen und zur Hinterleuchtung zu 90 % von den Kunden gewählt.",
         "Materialbreite max.": "510 cm",
         "Gewicht": "135 g/qm",
         "St\u00e4rke": "130 \u00b5",
@@ -505,6 +516,7 @@
         "Faltbar": ""
       },
       "FLEX LIGHT": {
+        "Rating" : 1,
         "Materialbreite max.": "500 cm",
         "Gewicht": "180 g/qm",
         "St\u00e4rke": "200 \u00b5",
@@ -538,6 +550,7 @@
         ]
       },
       "LUX IMAGE": {
+        "Rating" : 1,
         "Materialbreite max.": "320 cm",
         "Gewicht": "190 g/qm",
         "St\u00e4rke": "260 \u00b5",
@@ -572,6 +585,7 @@
         ]
       },
       "SAMBA": {
+        "Rating" : 1,
         "Materialbreite max.": "505 cm",
         "Gewicht": "205 g/qm",
         "St\u00e4rke": "230 \u00b5",
@@ -602,6 +616,7 @@
         "Faltbar": ""
       },
       "SOFT IMAGE": {
+        "Rating" : 1,
         "Materialbreite max.": "505 cm",
         "Gewicht": "205 g/qm",
         "St\u00e4rke": "360 \u00b5",

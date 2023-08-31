@@ -12,7 +12,7 @@
             Frame(frame){
                 this.$emit('final', frame)
             }
-        }
+        },
 
     }
 

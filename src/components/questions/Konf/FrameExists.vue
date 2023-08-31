@@ -18,7 +18,7 @@
         methods: {
             FrameStatus(frameStatus){
                 this.trial = frameStatus;
-                this.$emit('continue', frameStatus)
+                this.$emit('cont', {'frameStatus':frameStatus, 'lastPage':'FrameCondition'})
             },
 
         }

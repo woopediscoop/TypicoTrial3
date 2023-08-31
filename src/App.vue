@@ -1,8 +1,13 @@
 <template>
   <img alt="Typico logo" src="./assets/typico.png">
   <h1>Print Order</h1>
-  <component :is="currentComponent" @hereyago="Answers"></component>
-  <p>{{ possibleMaterialsList }}</p>
+  <component :is="currentComponent" :lastPage="lastPage" :qDict="questDict" :possibleMats="possibleMaterialsList" @continue="LastPage" @hereyago="Answers" @selection="OnSelected"></component>
+  <component :is="afterSelection" :both="questDict.doubleSlit.value"></component>
+  <br>
+  <p>{{ lastPage }}</p>
+  <br>
+  <button v-if="proceeded" @click="Back">Zurück</button>
+  <p v-if="proceeded">Mögliche Materialien nach Selektion: <br>{{ possibleMaterialsList }}</p>
 </template>
 
 <script>
@@ -12,10 +17,14 @@ export default {
   name: 'App',
   data() {
     return {
+      selectedMaterial: '',
+      lastPage:'',
+      proceeded: false,
       resultat: '',
       trial: false,
       currentComponent: null,
       currentComponentI: 0,
+      afterSelection: '',
       questDict: {
         Dimensions : {
           component: this.renderDimensions,
@@ -62,13 +71,15 @@ export default {
   },
   methods: {
     renderDimensions: () => import('./components/questions/DimensionInput.vue'),
-    renderInOut: () => import('./components/questions/InOut.vue'),
+    renderInOut: () => import('./components/questions/doorProps.vue'),
     renderdoubleSlit: () => import('./components/questions/doubleSlit.vue'),
     renderblickDicht: () => import('./components/questions/blickDicht.vue'),
     renderbackLit: () => import('./components/questions/backLit.vue'),
     renderKonf: () => import('./components/questions/Konf/KonfInput.vue'),
     whichFrame: () => import('./components/questions/Konf/FrameExists.vue'),
     renderFileUpload: () => import('./components/pages/FileUpload.vue'),
+    renderSelector: () => import('./components/pages/MatSelector.vue'),
+
 
     loadFirstComponent(){
       this.whichFrame().then(module => {
@@ -82,35 +93,6 @@ export default {
       });
     },
 
-
-    /* loadPossibleMaterials(){
-      let newList = []
-      if(this.questDict.InOut.value != null){
-        newList = this.possibleMaterials("Einsatz", this.questDict.InOut.value);
-      }
-      if(this.questDict.doubleSlit.value != null){
-        if(this.questDict.doubleSlit.value){
-          newList = this.updateMaterials(newList, "Einsatz", "beidseitig bedruckbar");
-        }
-      }
-      if(this.questDict.blickDicht.value != null){
-        newList = this.updateMaterials(newList, "Einsatz", this.questDict.blickDicht.value);
-      }
-      if(this.questDict.backLit.value != null){
-        if(this.questDict.backLit.value){
-          newList = this.updateMaterials(newList, "Einsatz", "hinterleuchtbar");
-        }
-      }
-      if(this.questDict.Konf.value != null){
-        if(this.questDict.Konf.value != '')
-        {
-          newList = this.updateMaterials(newList, "Konfektion", this.questDict.Konf.value)
-        }
-        
-      }
-
-      this.possibleMaterialsList = newList
-    }, */
 
     newUpdateMaterials(currentSelection, searchParams){
       if(searchParams.val == ''){
@@ -141,28 +123,20 @@ export default {
         return currentSelection.filter(item => singleChoiceSelection.includes(item));
       }
     },
-
-    /* updateMaterials(currentSelection, cat, val){
-      let singleChoiceSelection = []
-      
-      if(Array.isArray(val)){
-        val.forEach((value) => {
-          const fractionSelection = this.possibleMaterials(cat, value)
-          fractionSelection.forEach((result) => {
-            if(!singleChoiceSelection.includes(result)){
-              singleChoiceSelection.push(result);
-            }
-          })
-        })
+    reloadMaterials(){
+      let currentComp = 1;
+      this.possibleMaterialsList = [];
+      while(currentComp < this.currentComponentI){
+        if(this.questDict[this.questions[currentComp]].value != null){
+          this.possibleMaterialsList = this.newUpdateMaterials(this.possibleMaterialsList, this.questDict[this.questions[currentComp]].value);
+          
+        }
+        currentComp++;
       }
-      else{
-        singleChoiceSelection = this.possibleMaterials(cat, val)
-      }
-
-      
-
-
-    }, */
+    },
+    LastPage(data){
+      this.lastPage = data.lastPage;
+    },
 
     possibleMaterials(category,  value){
       const matCat = Object.keys(jsonData.Material);
@@ -199,14 +173,18 @@ export default {
     },
 
     loadNext() {
+      this.lastPage = ''
       this.currentComponent = null;
       //this.loadPossibleMaterials();
       this.currentComponentI = 0;
       while (this.currentComponentI < this.questions.length && this.questDict[this.questions[this.currentComponentI]].value !== null) {
         this.currentComponentI++;
       }
+      if(this.currentComponentI > 0){
+        this.proceeded = true;
+      }
       if(this.currentComponentI >= this.questions.length){
-        this.renderFileUpload().then((module) => {
+        this.renderSelector().then((module) => {
           this.currentComponent = module.default;
         })
         
@@ -217,10 +195,6 @@ export default {
           this.currentComponent = module.default;
       })
       }
-      
-
-      
-      //this.loadPossibleMaterials()
     },
 
 
@@ -231,12 +205,48 @@ export default {
       })
     },
 
+    Back(){
+      if(this.lastPage != '')
+      {
+        const func = this.questDict[this.questions[this.currentComponentI]].component
+        this.currentComponent = '';
+        func().then(module => {
+          this.currentComponent = module.default;
+        })
+      }
+      else {
+        
+        this.currentComponentI -= 1;
+        
+        this.questDict[this.questions[this.currentComponentI]].value = null;
+        this.reloadMaterials()
+        const func = this.questDict[this.questions[this.currentComponentI]].component
+          func().then(module => {
+            this.currentComponent = module.default;
+        })
+        if(this.currentComponentI == 0){
+          this.proceeded = false;
+        }
+
+      }
+    },
+
     Answers(data){
       this.trial = this.currentComponentI
       this.questDict[this.questions[this.currentComponentI]].value = data;
       this.possibleMaterialsList = this.newUpdateMaterials(this.possibleMaterialsList, data)
       this.loadNext()
     },
+
+    OnSelected(data){
+      this.selectedMaterial = data;
+      this.currentComponent = "";
+      this.proceeded = false;
+      this.renderFileUpload().then(module => {
+        this.afterSelection = module.default;
+      })
+
+    }
   },
   mounted() {
     this.populateQuestions()
