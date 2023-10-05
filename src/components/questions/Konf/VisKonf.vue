@@ -150,7 +150,7 @@
                     this.$emit('cont', {cat:'Konfektion',val:this.konfSel, Spezifikation:this.secondSel,Platzierung:this.thirdSel})
                 }
                 else{
-                    this.$emit('cont', {cat:'Konfektion',val:this.konfSel, Platzierung:this.thirdSel});
+                    this.$emit('cont', {cat:'Konfektion',val:this.konfSel, Platzierung:this.secondSel});
                 }
             }
         },
