@@ -1,5 +1,5 @@
 <template>
-    <component :is="currentKonf" @cont="Continue" @final="EmitKonf"></component>
+    <component :is="currentKonf" @cont="Continue" @final="EmitKonf" :questDict="this.qDict" :konfList="konfList" :visData="visData"></component>
 </template>
 
 <script>
@@ -9,19 +9,22 @@
 
 export default {
 
-    props: ['lastPage'],
+    props: ['lastPage', 'qDict'],
     data(){
         return{
-        trial: "",
-        ans: null,
-        currentKonf: null,
-        questionsDict : {
-            'frameExists' : null,
+            konfList: [],
+            visData:null,
+            ans: null,
+            currentKonf: null,
+            questionsDict : {
+                'frameExists' : null,
 
-        },
+            },
         }
     },
     methods: {
+        visKonf: () => import('./VisKonf.vue'),
+        dimensionCheck: () => import('./DimensionCheck.vue'),
         frameCondition: () => import('./FrameExists.vue'),
         frameExists: () => import('./ifFrameExists.vue'),
         noFrame: () => import('./noFrame.vue'),
@@ -34,16 +37,39 @@ export default {
             })
         },
         Continue(data){
-
+            this.visData = data;
+            if(data.val != null){
+                if(data.val == 'Hohlsaum' || data.val == 'Kederschlaufe'){
+                    this.dimensionCheck().then(module => {
+                        this.currentKonf = module.default;
+                    })
+                }
+                else{
+                    this.EmitKonf(data)
+                }
+            }
+            else{
+                //Outdated
             const templateStr = data.frameStatus;
             this.$emit('continue', data.lastPage)
             if(templateStr == "frameExists"){
-                this.frameExists().then(module => {
+                this.konfList = [
+                    {label:'Gummilippe',value:'Gummilippe'},
+                    {label:'Kederschlaufe',value:'Kederschlaufe'},
+                    {label:'Ösen',value:'Ösen'}
+                ] //Maybe add Hohlsaum
+                this.visKonf().then(module => {
                     this.currentKonf = module.default;
                 })
                 
             } else if (templateStr == "noFrame"){
-                this.noFrame().then(module => {
+                this.konfList = [
+                    {label:'Flausch u. Klett',value:'Klett'},
+                    {label:'Hohlsaum',value:'Hohlsaum'},
+                    {label:'Ohne Konfektion',value:''}
+                ]
+                //this.konfList = ['Flausch u. Klett', 'Hohlsaum', 'Ohne Konfektion']
+                this.visKonf().then(module => {
                     this.currentKonf = module.default;
                 })
             } else if (templateStr == "frameSale"){
@@ -60,6 +86,19 @@ export default {
                     this.currentKonf = module.default;
                 })
             }
+            }
+            
+
+
+
+
+
+
+
+
+
+
+            
 
         },
         EmitKonf(konfData) {

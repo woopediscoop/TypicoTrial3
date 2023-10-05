@@ -126,20 +126,10 @@ import jsonData from '../../../newupdated.json'
                         this.ratetrial += " Es ist komplett lichtundurchlässig und blickdicht"
                         fullStop = false;
                     }
-
-                    if(this.qDict.doubleSlit.value.val == "beidseitig bedruckbar"){
-                        if(fullStop){
-                            this.ratetrial += " Für Ihren gewünschten beidseitigen Druck hat dieses Material eine eingearbeitete Sperrschicht."
-                        }
-                        else{ 
-                            this.ratetrial += " und es ermöglicht Ihren gewünschten beidseitigen Druck mit einer eingearbeiteten Sperrschicht."
-                            fullStop = true;
-                        }
+                    if(fullStop){
+                        this.ratetrial += "."
                     }
-
-
                 }
-                
             }
         },
         created(){
@@ -147,7 +137,8 @@ import jsonData from '../../../newupdated.json'
             const dvv = this.FirstBest(this.possibleMats, this.BestRating(this.possibleMats));
             if(dvv != null &&  dvv.Name != undefined){
                 this.finalMaterial = dvv.Name;
-                this.ratetrial += "Das Material " + dvv.Name ;
+                this.Selection();
+                this.ratetrial += "Wir empfehlen dasas Material " + dvv.Name +", es";
                 this.SalesText(dvv.Name)
             }
             else {

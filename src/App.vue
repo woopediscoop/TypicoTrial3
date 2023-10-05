@@ -2,12 +2,12 @@
   <img alt="Typico logo" src="./assets/typico.png">
   <h1>Print Order</h1>
   <component :is="currentComponent" :lastPage="lastPage" :qDict="questDict" :possibleMats="possibleMaterialsList" @continue="LastPage" @hereyago="Answers" @selection="OnSelected"></component>
-  <component :is="afterSelection" :both="questDict.doubleSlit.value"></component>
+  <component :is="afterSelection" :msg="badSel" :material="selectedMaterial" :qDict="questDict" :qs="questions" @uploaded="ShowInfo"></component>
+  <component :is="infoPage" :qDict="questDict"  :qs="questions" @why="ShowInfo"></component>
   <br>
-  <p>{{ lastPage }}</p>
   <br>
   <button v-if="proceeded" @click="Back">Zurück</button>
-  <p v-if="proceeded">Mögliche Materialien nach Selektion: <br>{{ possibleMaterialsList }}</p>
+  <!-- <p v-if="proceeded">Mögliche Materialien nach Selektion: <br>{{ possibleMaterialsList }}</p> -->
 </template>
 
 <script>
@@ -17,6 +17,7 @@ export default {
   name: 'App',
   data() {
     return {
+      badSel: '',
       selectedMaterial: '',
       lastPage:'',
       proceeded: false,
@@ -31,7 +32,6 @@ export default {
           value: null,
           
         },
-        
         InOut: {
           component: this.renderInOut,
           value: null,
@@ -43,11 +43,11 @@ export default {
           searchParams: null,
           description: null,
         },
-        doubleSlit: {
+        /* doubleSlit: {
           component: this.renderdoubleSlit,
           value: null,
           searchParams: null,
-        },
+        }, */
         blickDicht: {
           component: this.renderblickDicht,
           value: null,
@@ -79,6 +79,9 @@ export default {
     whichFrame: () => import('./components/questions/Konf/FrameExists.vue'),
     renderFileUpload: () => import('./components/pages/FileUpload.vue'),
     renderSelector: () => import('./components/pages/MatSelector.vue'),
+    renderContact: () => import('./components/pages/ContactForm.vue'),
+    renderInfoPage: () => import('./components/pages/InfoPage.vue'),
+    //renderDimensionCheck: ()
 
 
     loadFirstComponent(){
@@ -138,7 +141,7 @@ export default {
       this.lastPage = data.lastPage;
     },
 
-    possibleMaterials(category,  value){
+    possibleMaterials(category, value){
       const matCat = Object.keys(jsonData.Material);
       let pMats = []
 
@@ -206,6 +209,7 @@ export default {
     },
 
     Back(){
+      this.afterSelection = null;
       if(this.lastPage != '')
       {
         const func = this.questDict[this.questions[this.currentComponentI]].component
@@ -232,10 +236,42 @@ export default {
     },
 
     Answers(data){
-      this.trial = this.currentComponentI
-      this.questDict[this.questions[this.currentComponentI]].value = data;
-      this.possibleMaterialsList = this.newUpdateMaterials(this.possibleMaterialsList, data)
-      this.loadNext()
+      //Checking if any of the selections are outside the scope of the system
+      if(this.currentComponentI == 0){
+        if( ((data.height > 5000) + (data.width > 5000)) == 2 ){
+          //Message to ContactForm
+          this.badSel = "Für ihre gewollten Dimensionen von " + (data.width) + 'x' + (data.height) + " mm müssen zusätzlich Nähte konfektioniert werden. Lassen Sie sich dafür von unseren Verkäufern beraten."
+          this.currentComponent = "";
+          this.renderContact().then(module => {
+            this.afterSelection = module.default;
+          })
+          return;
+        }
+      }
+      else if(this.currentComponentI == 3){
+        if(data.disect == false){
+          //Message to ContactForm 
+          this.badSel = "Für eine bestimmte Materialtransparenz wenden Sie sich am besten an unsere Verkäufer."
+          this.currentComponent = "";
+          this.renderContact().then(module => {
+            this.afterSelection = module.default;
+          })
+          return;
+        }
+      }
+      else if(this.currentComponentI == 4){
+        if(data.val == 'hinterleuchtbar'){
+          this.badSel = "Für einen hinterleuchtbaren Druck wenden Sie sich am besten an unsere Verkäufer."
+          this.currentComponent = "";
+          this.renderContact().then(module => {
+            this.afterSelection = module.default;
+          })
+          return;
+        } 
+      }
+        this.questDict[this.questions[this.currentComponentI]].value = data;
+        this.possibleMaterialsList = this.newUpdateMaterials(this.possibleMaterialsList, data)
+        this.loadNext()
     },
 
     OnSelected(data){
@@ -246,11 +282,18 @@ export default {
         this.afterSelection = module.default;
       })
 
+    },
+
+    ShowInfo(){
+      this.renderInfoPage().then(module => {
+        this.afterSelection = module.default;
+      })
     }
   },
   mounted() {
-    this.populateQuestions()
-    this.loadNext()
+    this.populateQuestions();
+    this.loadNext();
+    
   }
 }
 </script>

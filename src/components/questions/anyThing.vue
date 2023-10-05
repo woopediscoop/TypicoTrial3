@@ -15,6 +15,7 @@ import jsonData from '../../../updated.json'
         
         data(){
             return {
+                
                 selectedKonf: '',
                 wrkrnd: '',
                 konfList: Object.keys(jsonData.Konfektion),

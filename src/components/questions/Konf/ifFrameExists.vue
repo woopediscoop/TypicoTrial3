@@ -20,6 +20,7 @@
             Construction(){
                 this.note = "Notiz: Dieser Schritt wird noch ausgebaut"
             }
+            
         }
     }
 

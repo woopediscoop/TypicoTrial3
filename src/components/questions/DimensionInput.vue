@@ -2,12 +2,12 @@
 
 <template>
     <h3>Wie groß ist ihr Druck? Angabe in mm:</h3>
-    <p>Höhe in mm:</p>
-    <p style="color:red; ">{{ heightmess }}</p>
-    <input type="number" v-model="height" @change="heightChange">
     <p>Breite in mm:</p>
     <p style="color:red; ">{{ widthmess }}</p>
     <input type="number" v-model="width" @change="widthChange">
+    <p>Höhe in mm:</p>
+    <p style="color:red; ">{{ heightmess }}</p>
+    <input type="number" v-model="height" @change="heightChange">
     <p>{{ fehlermeldung }}</p>
     <button :disabled="notSubmitable" @click="submitDimensions">Weiter</button>
 </template>
